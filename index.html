@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<title> Cotizaciones Autospa El Sol </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+            margin: 20px;
+            background-color: #F3F3F3;
+            align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom:0px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 40px 60px;
+            background-color: #0F67B1;
+            font-size: 40px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color:#0F67B1;
+        }
+    </style>
+<body>
+    <div class="container">
+        <img src="servicios aes.jpg" alt="servicios aes" class="background-image">
+            <h1>Elige tus servicios</h1>
+        <form id="checklist-form">
+            <label>
+                <input type="checkbox" class="item" value="10">
+                Vestiduras
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="20">
+                Interiores y plásticos
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="30">
+                Cielo
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Alfombras y tapetes
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Cajuela
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Carroceria y llantas
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Tapón de gasolina
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Faros
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Encerado
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Descontaminación de rines
+            </label>
+            <label>
+                <input type="checkbox" class="item" value="40">
+                Coche con necesidades especiales (pelo de animal, lavado hace bastantes años, entre otros)
+            </label>
+            <button type="button" onclick="calcularSuma()">Listo</button>
+        </form>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        function calcularSuma() {
+            // Obtener todos los elementos de la lista de verificación
+            const checkboxes = document.querySelectorAll('.item');
+            let suma = 0;
+
+            // Iterar sobre cada checkbox para verificar si está seleccionado
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    suma += parseFloat(checkbox.value);
+                }
+            });
+
+            // Mostrar el resultado en el elemento con id 'resultado'
+            document.getElementById('resultado').textContent = `Suma total: ${suma}`;
+        }
+    </script>
+</body>
+</html>
